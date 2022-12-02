@@ -1,0 +1,383 @@
+/* Fonts */
+@import url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+	margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+	height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* css reset */
+
+/* # Front-end Style Guide
+
+- Mobile: 375px
+- Desktop: 1440px
+
+### Body Copy
+
+- Font size (paragraph): 15px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700, 800 */
+
+/* global css ========== */
+
+:root {
+	--clr-primary-orange: hsl(35, 77%, 62%);
+	--clr-primary-red: hsl(5, 85%, 63%);
+
+	--clr-n-Off-white: hsl(36, 100%, 99%);
+	--clr-n-grayishBlue: hsl(233, 8%, 79%);
+	--clr-n-darkGrayishBlue: hsl(236, 13%, 42%);
+	--clr-n-veryDarkBlue: hsl(240, 100%, 5%);
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font: 15px "Inter", sans-serif;
+	background: var(--clr-n-Off-white);
+	padding-inline: 1rem;
+}
+
+/* end of global css ========== */
+
+/* navbar ========== */
+/* burger menu animation */
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.logo {
+	/* background: var(--clr-primary-red); */
+}
+
+.nav__items {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-;
+	width: 80%;
+	padding: 1rem 2rem;
+	background: var(--clr-primary-orange);
+}
+
+.nav__item {
+	margin-bottom: 2rem;
+}
+
+.nav__item a {
+	color: var(--clr-n-darkGrayishBlue);
+}
+
+.nav__item a:focus,
+.nav__item a:hover {
+	color: var(--clr-primary-red);
+}
+
+@media (min-width: 40rem) {
+	.nav__items {
+		flex-direction: row;
+		width: auto;
+		background: none;
+		gap: 3rem;
+	}
+}
+
+/* end of navbar ========== */
+
+/* spacing ========== */
+main,
+aside,
+section {
+	margin-bottom: 2rem;
+}
+
+@media (max-width: 62rem) {
+	main,
+	aside,
+	section {
+		margin-bottom: 5rem;
+	}
+}
+
+/* end of spacing ========== */
+
+/* desktop layout ========== */
+@media (min-width: 62rem) {
+	section {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.main__container:nth-child(1) {
+		flex: 1 1 70%;
+	}
+
+	.main__container:nth-child(2) {
+		flex: 1 1 30%;
+	}
+
+	.main__sub__container {
+		display: flex;
+	}
+
+	.main__sub__container > * {
+		flex-basis: 100%;
+	}
+
+	.primary__article__description {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+/* end of layout ========== */
+
+/* primary article ========== */
+
+.primary__title {
+	font: 800 4rem / 1 "Inter", sans-serif;
+}
+
+.primary__text {
+	color: var(--clr-n-darkGrayishBlue);
+	font: 400 1rem / 1.6 "Inter", sans-serif;
+}
+
+@media (min-width: 62rem) {
+	.primary__title {
+		padding-right: 2rem;
+	}
+	.primary__text {
+		margin-bottom: 5rem;
+	}
+}
+
+.primary__img,
+.primary__title,
+.primary__text {
+	margin-bottom: 1.5rem;
+}
+
+button {
+	border: 0;
+	padding: 0;
+}
+
+.btn {
+	padding: 1rem 2rem;
+	background: var(--clr-primary-red);
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.btn {
+	color: var(--clr-n-Off-white);
+}
+
+.btn:hover,
+.btn:focus {
+	background: var(--clr-n-veryDarkBlue);
+}
+
+/* end of primary article ========== */
+
+/* aside ========== */
+aside {
+	background: var(--clr-n-veryDarkBlue);
+	color: var(--clr-n-Off-white);
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+aside article {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var(--clr-n-darkGrayishBlue);
+}
+
+aside article:last-child {
+	border: 0;
+}
+
+.aside__title {
+	color: var(--clr-primary-orange);
+	font-size: 1.5rem;
+}
+
+.aside__news__title {
+	margin-bottom: 0.5rem;
+}
+
+.aside__news__title a {
+	color: var(--clr-n-Off-white);
+}
+
+.aside__news__title a:focus,
+.aside__news__title a:hover {
+	color: var(--clr-primary-orange);
+}
+
+.aside__news__text {
+	color: var(--clr-n-grayishBlue);
+}
+
+/* end of aside ========== */
+
+/* popular news ========== */
+.popular__news__img img {
+	width: 80%;
+	/* height: 80%; */
+	-o-object-fit: contain;
+	object-fit: contain;
+}
+
+/* needs further development */
+
+.popular__news > article {
+	display: flex;
+	/* gap: 1rem; */
+	justify-content: center;
+	align-items: center;
+}
+
+.popular__news article,
+.popular__news__number,
+.popular__news__title {
+	margin-bottom: 1rem;
+}
+
+.popular__news article > * {
+	flex-basis: 100%;
+}
+
+.popular__news__number {
+	color: var(--clr-n-grayishBlue);
+	font-size: 2.5rem;
+}
+
+.popular__news__title {
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+
+.popular__news__title a {
+	color: var(--clr-n-veryDarkBlue);
+}
+
+.popular__news__title a:focus,
+.popular__news__title a:hover {
+	color: var(--clr-primary-red);
+}
+
+.popular__news__description {
+	color: var(--clr-n-darkGrayishBlue);
+}
+
+/* end of popular news ========== */
+
+/* footer */
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-weight: 400;
+	font-size: 11px;
+	padding-inline: 3rem;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
