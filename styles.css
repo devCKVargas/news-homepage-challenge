@@ -1,0 +1,274 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+	margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+	height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#--next {
+	isolation: isolate;
+}
+
+/* css reset */
+
+/* # Front-end Style Guide
+- Mobile: 375px
+- Desktop: 1440px
+### Body Copy
+- Font size (paragraph): 15px
+### Font
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700, 800 */
+
+/* global css ========== */
+
+:root {
+	--clr-accent-orange: hsl(35, 77%, 62%);
+	--clr-accent-red: hsl(5, 85%, 63%);
+
+	--clr-neutral-100: hsl(36, 100%, 99%);
+	--clr-neutral-200: hsl(233, 8%, 79%);
+	--clr-neutral-300: hsl(236, 13%, 42%);
+	--clr-neutral-400: hsl(240, 100%, 5%);
+	--fw-normal: 400;
+	--fw-bold: 700;
+	--fw-bolder: 800;
+	--ff-primary: "Inter", sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font: 15px var(--ff-primary);
+	background: var(--clr-neutral-100);
+	padding-inline: 1rem;
+}
+
+/* footer ========== */
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-weight: var(--fw-normal);
+	font-size: 11px;
+	padding-inline: 3rem;
+}
+
+/* end of global css ========== */
+
+/* spacing ========= */
+.main--wrapper > *,
+.main--paragraph--text {
+	margin-bottom: 2rem;
+}
+
+.main--paragraph .main--button {
+	margin-bottom: 4rem;
+}
+
+/* main ========== */
+
+.heading--img {
+	margin-inline: auto;
+}
+
+.main--heading--text {
+	font-size: 3rem;
+	max-width: 12ch;
+	font-weight: var(--fw-bolder);
+}
+
+.main--paragraph {
+	/* padding-bottom: 5rem; */
+}
+
+.main--paragraph--text {
+	color: var(--clr-neutral-300);
+	line-height: 2;
+	max-width: 80ch;
+}
+
+.main--button {
+	all: unset;
+}
+
+.main--button a {
+	color: var(--clr-neutral-100);
+	background: var(--clr-accent-red);
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+	font-weight: var(--fw-bold);
+}
+
+.main--button :is(:hover, :focus-visible) {
+	background: var(--clr-neutral-400);
+}
+
+/* aside ========== */
+.aside--wrapper {
+	background: var(--clr-neutral-400);
+	color: var(--clr-neutral-100);
+	padding: 2rem;
+}
+
+.news--heading a {
+	font-size: 2.5rem;
+	color: var(--clr-accent-orange);
+}
+
+.news--title {
+	line-height: 2.25;
+}
+
+.news--title a {
+	color: var(--clr-neutral-100);
+}
+
+.news--title a:is(:hover, :focus-visible) {
+	color: var(--clr-accent-orange);
+}
+
+.news--description {
+	color: var(--clr-neutral-200);
+}
+
+.news--article,
+.news--heading {
+	margin-bottom: 2rem;
+}
+
+.news--article {
+	padding-bottom: 3rem;
+	border-bottom: 1px solid var(--clr-neutral-300);
+}
+
+.news--article:last-child {
+	padding: unset;
+	border: 0;
+	margin: unset;
+}
+
+@media (min-width: 50rem) {
+	.main--wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1rem;
+		grid-template-areas:
+			"image image news"
+			"heading cta news"
+			"footer footer footer";
+		/* outline: 5px solid black; */
+	}
+
+	.main--wrapper > div,
+	.footer--wrapper > div {
+		outline: 3px solid var(--clr-accent-red);
+	}
+
+	.main--wrapper .heading--img--container {
+		grid-column: span 2;
+	}
+
+	.heading--img {
+		margin: unset;
+	}
+
+	.main--wrapper .main--heading {
+		background: var(--clr-accent-orange);
+		grid-area: heading;
+	}
+
+	.main--paragraph {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding-bottom: 1rem;
+	}
+
+	/* aside wrapper ========== */
+	.aside--wrapper {
+		grid-area: news;
+	}
+
+	.footer--wrapper {
+		grid-area: footer;
+	}
+}
