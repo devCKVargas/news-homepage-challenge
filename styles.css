@@ -227,6 +227,7 @@ section {
 .primary__text {
 	color: var(--clr-n-darkGrayishBlue);
 	font: 400 1rem / 1.6 "Inter", sans-serif;
+	max-width: 50ch;
 }
 
 @media (min-width: 62rem) {
@@ -250,10 +251,11 @@ button {
 }
 
 .btn {
-	padding: 1rem 2rem;
+	padding: 1.25rem 2.25rem;
 	background: var(--clr-primary-red);
 	letter-spacing: 0.5rem;
 	text-transform: uppercase;
+	line-height: 3.75;
 	font-weight: 700;
 	cursor: pointer;
 }
