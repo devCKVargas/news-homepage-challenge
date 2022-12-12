@@ -4,8 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variable.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
@@ -15,8 +17,14 @@
   <body>
     <header>
       <nav class="navbar" id="navbar">
-        <ul class="nav--list">
-          <li><a href="#home">Home</a></li>
+        <div class="logo--container">
+          <a href="#"><img src="/assets/images/logo.svg" alt="logo"></a>
+        </div>
+        <div class="nav-menu-button">
+          <img src="/assets/images/icon-menu.svg">
+        </div>
+        <ul class="nav--list opened">
+          <li><a href="#">Home</a></li>
           <li><a href="#new">New</a></li>
           <li><a href="#popular">Popular</a></li>
           <li><a href="#trending">Trending</a></li>
@@ -25,8 +33,8 @@
       </nav>
     </header>
     <main>
-      <article class="container">
-        <article class="main--wrapper">
+      <div class="container">
+        <div class="main--wrapper">
           <picture class="heading--img--container">
             <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 50rem)">
             <img src="./assets/images/image-web-3-mobile.jpg" class="heading--img" alt="Puzzle Game">
@@ -34,7 +42,7 @@
           <div class="main--heading">
             <h1 class="main--heading--text">The Bright Future of Web 3.0?</h1>
           </div>
-          <div class="main--paragraph">
+          <div class="cta | main--paragraph">
             <p class="main--paragraph--text">
               We dive into the next evolution of the web that claims to put the power of the platforms back into the
               hands of the people. But is it really fulfilling its promise?
@@ -44,39 +52,56 @@
           <div class="aside--wrapper" id="new">
             <h1 class="news--heading"><a href="#new">New</a></h1>
             <article class="news--article">
-              <h2 class="news--title"><a href="#">Hydrogen VS Electric Cars</a></h2>
+              <h2 class="news--title"><a href="#new">Hydrogen VS Electric Cars</a></h2>
               <p class="news--description">Will hydrogen-fueled cars ever catch up to EVs?</p>
             </article>
             <article class="news--article">
-              <h2 class="news--title"><a href="#">The Downsides of AI Artistry</a></h2>
+              <h2 class="news--title"><a href="#new">The Downsides of AI Artistry</a></h2>
               <p class="news--description">What are the possible adverse effects of on-demand AI image generation?</p>
             </article>
             <article class="news--article">
-              <h2 class="news--title"><a href="#">Is VC Funding Drying Up?</a></h2>
+              <h2 class="news--title"><a href="#new">Is VC Funding Drying Up?</a></h2>
               <p class="news--description">Private funding by VC firms is down 50% YOY. We take a look at what that
                 means.
               </p>
             </article>
           </div>
-          <div class="footer--wrapper">
-            <div>
-              01
-              Reviving Retro PCs
-              What happens when old PCs are given modern upgrades?
+          <article id="trending" class="footer--wrapper trending--article--container">
+            <div class="trending--article--column">
+              <div class="trending--img--container"><img src="/assets/images/image-retro-pcs.jpg" class="trending--img"
+                  alt="...">
+              </div>
+              <div class="trending--article">
+                <div class="trending--top">01</div>
+                <div class="trending--title"><a href="#trending">Reviving Retro PCs</a>
+                  <div class="trending--description">What happens when old PCs are given modern upgrades?
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              02
-              Top 10 Laptops of 2022
-              Our best picks for various needs and budgets.
+            <div class="trending--article--column">
+              <div class="trending--img--container"><img src="/assets/images/image-top-laptops.jpg"
+                  class="trending--img" alt="...">
+              </div>
+              <div class="trending--article">
+                <div class="trending--top">02</div>
+                <div class="trending--title"><a href="#trending">Top 10 Laptops of 2022</a></div>
+                <div class="trending--description">Our best picks for various needs and budgets.</div>
+              </div>
             </div>
-            <div>
-              03
-              The Growth of Gaming
-              How the pandemic has sparked fresh opportunities.
+            <div class="trending--article--column">
+              <div class="trending--img--container"><img src="/assets/images/image-gaming-growth.jpg"
+                  class="trending--img" alt="...">
+              </div>
+              <div class="trending--article">
+                <div class="trending--top">03</div>
+                <div class="trending--title"><a href="#trending">The Growth of Gaming</a></div>
+                <div class="trending--description">How the pandemic has sparked fresh opportunities.</div>
+              </div>
             </div>
-          </div>
-          </div>
-
+          </article>
+        </div>
+      </div>
     </main>
 
     <footer class="footer attribution">

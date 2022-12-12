@@ -1,0 +1,13 @@
+:root {
+	--clr-accent-orange: hsl(35, 77%, 62%);
+	--clr-accent-red: hsl(5, 85%, 63%);
+
+	--clr-neutral-100: hsl(36, 100%, 99%);
+	--clr-neutral-200: hsl(233, 8%, 79%);
+	--clr-neutral-300: hsl(236, 13%, 42%);
+	--clr-neutral-400: hsl(240, 100%, 5%);
+	--fw-normal: 400;
+	--fw-bold: 700;
+	--fw-bolder: 800;
+	--ff-primary: "Inter", sans-serif;
+}
