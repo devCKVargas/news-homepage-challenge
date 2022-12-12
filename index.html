@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variable.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
     <title>Frontend Mentor | News homepage</title>
   </head>
 
   <body>
     <header>
-      <nav class="navbar" id="navbar">
+      <nav class="navbar container" id="navbar">
         <div class="logo--container">
           <a href="#"><img src="/assets/images/logo.svg" alt="logo"></a>
         </div>
@@ -66,48 +71,45 @@
               </p>
             </article>
           </div>
-          <article id="trending" class="footer--wrapper trending--article--container">
-            <div class="trending--article--column">
-              <div class="trending--img--container"><img src="/assets/images/image-retro-pcs.jpg" class="trending--img"
-                  alt="...">
-              </div>
-              <div class="trending--article">
-                <div class="trending--top">01</div>
-                <div class="trending--title"><a href="#trending">Reviving Retro PCs</a>
-                  <div class="trending--description">What happens when old PCs are given modern upgrades?
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="trending--article--column">
-              <div class="trending--img--container"><img src="/assets/images/image-top-laptops.jpg"
-                  class="trending--img" alt="...">
-              </div>
-              <div class="trending--article">
-                <div class="trending--top">02</div>
-                <div class="trending--title"><a href="#trending">Top 10 Laptops of 2022</a></div>
-                <div class="trending--description">Our best picks for various needs and budgets.</div>
-              </div>
-            </div>
-            <div class="trending--article--column">
-              <div class="trending--img--container"><img src="/assets/images/image-gaming-growth.jpg"
-                  class="trending--img" alt="...">
-              </div>
-              <div class="trending--article">
-                <div class="trending--top">03</div>
-                <div class="trending--title"><a href="#trending">The Growth of Gaming</a></div>
-                <div class="trending--description">How the pandemic has sparked fresh opportunities.</div>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </main>
-
-    <footer class="footer attribution">
+    <footer id="trending" class="footer--wrapper trending--article--container container">
+      <article class="trending--article--column">
+        <div class="trending--img--container"><a href="#trending"><img src="/assets/images/image-retro-pcs.jpg"
+              class="trending--img" alt="..."></a>
+        </div>
+        <div class="trending--article">
+          <div class="trending--top">01</div>
+          <div class="trending--title"><a href="#trending">Reviving Retro PCs</a></div>
+          <div class="trending--description">What happens when old PCs are given modern upgrades?</div>
+        </div>
+      </article>
+      <article class="trending--article--column">
+        <div class="trending--img--container"><a href="#trending"><img src="/assets/images/image-top-laptops.jpg"
+              class="trending--img" alt="..."></a>
+        </div>
+        <div class="trending--article">
+          <div class="trending--top">02</div>
+          <div class="trending--title"><a href="#trending">Top 10 Laptops of 2022</a></div>
+          <div class="trending--description">Our best picks for various needs and budgets.</div>
+        </div>
+      </article>
+      <article class="trending--article--column">
+        <div class="trending--img--container"><a href="#trending"><img src="/assets/images/image-gaming-growth.jpg"
+              class="trending--img" alt="..."></a>
+        </div>
+        <div class="trending--article">
+          <div class="trending--top">03</div>
+          <div class="trending--title"><a href="#trending">The Growth of Gaming</a></div>
+          <div class="trending--description">How the pandemic has sparked fresh opportunities.</div>
+        </div>
+      </article>
+    </footer>
+    <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://github.com/CKVargas/" target="_blank">CK Vargas</a>.
-    </footer>
+    </div>
   </body>
 
 </html>
