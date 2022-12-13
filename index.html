@@ -4,12 +4,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chris King Vargas">
+    <meta name="description" content="This is my solution to the news homepage challenge on Frontend Mentor">
+
+    <!-- favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
     <!-- css -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variable.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variable.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,95 +25,127 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar container" id="navbar">
-        <div class="logo--container">
-          <a href="#"><img src="/assets/images/logo.svg" alt="logo"></a>
-        </div>
-        <div class="nav-menu-button">
-          <img src="/assets/images/icon-menu.svg">
-        </div>
-        <ul class="nav--list opened">
-          <li><a href="#">Home</a></li>
-          <li><a href="#new">New</a></li>
-          <li><a href="#popular">Popular</a></li>
-          <li><a href="#trending">Trending</a></li>
-          <li><a href="#categories">Categories</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
+    <div class="container">
+
+      <header>
+        <nav class="navbar" id="navbar">
+          <div class="logo--container">
+            <a href="#" itemprop="url"><img src="./assets/images/logo.svg" alt="logo"></a>
+          </div>
+          <div class="nav-menu-button">
+            <img src="./assets/images/icon-menu.svg">
+          </div>
+          <ul class="nav--list opened">
+            <li><a href="#">Home</a></li>
+            <li><a href="#new">New</a></li>
+            <li><a href="#popular">Popular</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#categories">Categories</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
         <div class="main--wrapper">
-          <picture class="heading--img--container">
-            <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 50rem)">
-            <img src="./assets/images/image-web-3-mobile.jpg" class="heading--img" alt="Puzzle Game">
-          </picture>
-          <div class="main--heading">
-            <h1 class="main--heading--text">The Bright Future of Web 3.0?</h1>
-          </div>
-          <div class="cta | main--paragraph">
-            <p class="main--paragraph--text">
-              We dive into the next evolution of the web that claims to put the power of the platforms back into the
-              hands of the people. But is it really fulfilling its promise?
-            </p>
-            <button class="main--button"><a href="#">Read more</a></button>
-          </div>
-          <div class="aside--wrapper" id="new">
-            <h1 class="news--heading"><a href="#new">New</a></h1>
-            <article class="news--article">
-              <h2 class="news--title"><a href="#new">Hydrogen VS Electric Cars</a></h2>
-              <p class="news--description">Will hydrogen-fueled cars ever catch up to EVs?</p>
-            </article>
-            <article class="news--article">
-              <h2 class="news--title"><a href="#new">The Downsides of AI Artistry</a></h2>
-              <p class="news--description">What are the possible adverse effects of on-demand AI image generation?</p>
-            </article>
-            <article class="news--article">
-              <h2 class="news--title"><a href="#new">Is VC Funding Drying Up?</a></h2>
-              <p class="news--description">Private funding by VC firms is down 50% YOY. We take a look at what that
-                means.
+          <article class="main--article" itemscope="" itemtype="https://schema.org/NewsArticle">
+            <div class="heading--img--container">
+              <a href="#" itemprop="url">
+                <picture>
+                  <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 43.75rem)" alt="Web 3.0">
+                  <img src="./assets/images/image-web-3-mobile.jpg" class="heading--img" alt="Web 3.0">
+                </picture>
+              </a>
+            </div>
+            <div class="main--heading">
+              <h1 itemprop="name" class="main--heading--text">The Bright Future of Web 3.0?</h1>
+            </div>
+            <div class="cta | main--paragraph">
+              <p itemprop="abstract" class="main--paragraph--text">
+                We dive into the next evolution of the web that claims to put the power of the platforms back into the
+                hands of the people. But is it really fulfilling its promise?
               </p>
+              <button class="main--button"><a href="#">Read more</a></button>
+            </div>
+          </article>
+
+          <aside class="aside--wrapper" id="new">
+            <h2 class="news--heading"><a href="#new" itemprop="url">New</a></h2>
+            <article class="news--article" itemscope="" itemtype="https://schema.org/NewsArticle">
+              <a href="#new" itemprop="url">
+                <h3 itemprop="name" class="news--title">Hydrogen VS Electric Cars</h3>
+                <p itemprop="abstract" class="news--description">Will hydrogen-fueled cars ever catch up to EVs?</p>
+              </a>
+            </article>
+            <article class="news--article" itemscope="" itemtype="https://schema.org/NewsArticle">
+              <a href="#new" itemprop="url">
+                <h3 itemprop="name" class="news--title">The Downsides of AI Artistry</h3>
+                <p itemprop="abstract" class="news--description">What are the possible adverse effects of on-demand
+                  AI image generation?</p>
+              </a>
+            </article>
+            <article class="news--article" itemscope="" itemtype="https://schema.org/NewsArticle">
+              <a href="#new" itemprop="url">
+                <h3 itemprop="name" class="news--title">Is VC Funding Drying Up?</h3>
+                <p itemprop="abstract" class="news--description">Private funding by VC firms is down 50% YOY. We take a
+                  look at what that means. </p>
+              </a>
+            </article>
+          </aside>
+
+          <div class="secondary--article--wrapper trending--article--container" id="trending">
+            <article class="trending--article--column" itemscope="" itemtype="https://schema.org/NewsArticle">
+              <a href="#trending" itemprop="url">
+                <figure class="trending--img--container"><img src="./assets/images/image-retro-pcs.jpg"
+                    class="trending--img" alt="Retro PCs">
+                </figure>
+                <div class="trending--article">
+                  <div class="trending--title">
+                    <h3 itemprop="name">Reviving Retro PCs</h3>
+                  </div>
+                  <div class="trending--description">
+                    <p itemprop="abstract">What happens when old PCs are given modern upgrades?</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+            <article class="trending--article--column" itemscope="" itemtype="https://schema.org/NewsArticle">
+              <a href="#trending" itemprop="url">
+                <figure class="trending--img--container"><img src="./assets/images/image-top-laptops.jpg"
+                    class="trending--img" alt="Laptop keyboard close-up photo">
+                </figure>
+                <div class="trending--article">
+                  <div class="trending--title">
+                    <h3 itemprop="name">Top 10 Laptops of 2022</h3>
+                  </div>
+                  <div class="trending--description">
+                    <p itemprop="abstract">Our best picks for various needs and budgets.</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+            <article class="trending--article--column" itemscope="" itemtype="https://schema.org/NewsArticle">
+              <a href="#trending" itemprop="url">
+                <figure class="trending--img--container"><img src="./assets/images/image-gaming-growth.jpg"
+                    class="trending--img" alt="White Playstation controller thrown in the air">
+                </figure>
+                <div class="trending--article">
+                  <div class="trending--title">
+                    <h3 itemprop="name">The Growth of Gaming</h3>
+                  </div>
+                  <div class="trending--description">
+                    <p itemprop="abstract">How the pandemic has sparked fresh opportunities.</p>
+                  </div>
+                </div>
+              </a>
             </article>
           </div>
         </div>
-      </div>
-    </main>
-    <footer id="trending" class="footer--wrapper trending--article--container container">
-      <article class="trending--article--column">
-        <div class="trending--img--container"><a href="#trending"><img src="/assets/images/image-retro-pcs.jpg"
-              class="trending--img" alt="..."></a>
-        </div>
-        <div class="trending--article">
-          <div class="trending--top">01</div>
-          <div class="trending--title"><a href="#trending">Reviving Retro PCs</a></div>
-          <div class="trending--description">What happens when old PCs are given modern upgrades?</div>
-        </div>
-      </article>
-      <article class="trending--article--column">
-        <div class="trending--img--container"><a href="#trending"><img src="/assets/images/image-top-laptops.jpg"
-              class="trending--img" alt="..."></a>
-        </div>
-        <div class="trending--article">
-          <div class="trending--top">02</div>
-          <div class="trending--title"><a href="#trending">Top 10 Laptops of 2022</a></div>
-          <div class="trending--description">Our best picks for various needs and budgets.</div>
-        </div>
-      </article>
-      <article class="trending--article--column">
-        <div class="trending--img--container"><a href="#trending"><img src="/assets/images/image-gaming-growth.jpg"
-              class="trending--img" alt="..."></a>
-        </div>
-        <div class="trending--article">
-          <div class="trending--top">03</div>
-          <div class="trending--title"><a href="#trending">The Growth of Gaming</a></div>
-          <div class="trending--description">How the pandemic has sparked fresh opportunities.</div>
-        </div>
-      </article>
-    </footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/CKVargas/" target="_blank">CK Vargas</a>.
+      </main>
+
+      <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/CKVargas/" target="_blank">CK Vargas</a>.
+      </footer>
     </div>
   </body>
 
