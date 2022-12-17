@@ -2,6 +2,7 @@
 <html lang="en">
 
   <head>
+    <!-- meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Chris King Vargas">
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- fonts -->
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
@@ -26,22 +27,25 @@
 
   <body>
     <div class="container">
-
+      <div class="overlay"></div>
       <header>
+        <a href="#" itemprop="url"><img src="./assets/images/logo.svg" alt="logo" class="logo"></a>
+        <button class="nav--menu--button">
+          <img src="./assets/images/icon-menu.svg">
+        </button>
         <nav class="navbar" id="navbar">
-          <div class="logo--container">
-            <a href="#" itemprop="url"><img src="./assets/images/logo.svg" alt="logo"></a>
+          <div class="nav--wrapper">
+            <button class="nav--close--button closed">
+              <img src="./assets/images/icon-menu-close.svg">
+            </button>
+            <ul class="nav--list" role="navigation">
+              <li><a href="#">Home</a></li>
+              <li><a href="#new">New</a></li>
+              <li><a href="#popular">Popular</a></li>
+              <li><a href="#trending">Trending</a></li>
+              <li><a href="#categories">Categories</a></li>
+            </ul>
           </div>
-          <div class="nav-menu-button">
-            <img src="./assets/images/icon-menu.svg">
-          </div>
-          <ul class="nav--list opened">
-            <li><a href="#">Home</a></li>
-            <li><a href="#new">New</a></li>
-            <li><a href="#popular">Popular</a></li>
-            <li><a href="#trending">Trending</a></li>
-            <li><a href="#categories">Categories</a></li>
-          </ul>
         </nav>
       </header>
 
@@ -148,5 +152,8 @@
       </footer>
     </div>
   </body>
+
+  <!-- javascript -->
+  <script src="./js/script.js"></script>
 
 </html>
