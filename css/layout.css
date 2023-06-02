@@ -19,6 +19,12 @@
 }
 
 /* Mobile layout ========== */
+.nav--list a {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
 .main--wrapper {
 	display: grid;
 	gap: 2.5rem;
@@ -68,6 +74,7 @@
 
 /* Desktop layout ========== */
 @media (min-width: 73.125rem) {
+
 	/* main ========== */
 	.main--wrapper {
 		grid-template-columns: repeat(3, 1fr);

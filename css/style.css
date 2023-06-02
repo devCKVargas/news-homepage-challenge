@@ -33,9 +33,11 @@ p {
 	h1 {
 		font-size: 3.5rem;
 	}
+
 	h2 {
 		font-size: 2.25rem;
 	}
+
 	p {
 		font-size: 0.9375rem;
 	}
@@ -46,7 +48,7 @@ p {
 .attribution {
 	position: fixed;
 	left: 0;
-	bottom: 0;
+	bottom: 1rem;
 	width: 100%;
 	text-align: center;
 	font-weight: var(--fw-normal);
@@ -64,6 +66,7 @@ p {
 /* main ========== */
 .heading--img--container,
 .news--heading a {
+	display: block;
 	transition: transform 0.2s;
 }
 
@@ -156,6 +159,11 @@ p {
 	width: 100%;
 }
 
+.trending--article--column:is(:hover, :focus-visible) img {
+	-webkit-filter: brightness(0.85);
+	filter: brightness(0.85);
+}
+
 .trending--article {
 	display: flex;
 	flex-direction: column;
@@ -206,12 +214,16 @@ header {
 	cursor: pointer;
 	display: none;
 	position: fixed;
-	z-index: 10;
+	z-index: 2;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	width: 100%;
 	background: #000000a1;
+}
+
+.hidden {
+	display: none;
 }
 
 .nav--menu--button {
@@ -227,16 +239,14 @@ header {
 .nav--wrapper {
 	display: flex;
 	flex-direction: row-reverse;
-	z-index: 100;
+	z-index: 1;
 }
 
 .nav--close--button {
-	display: block;
-	z-index: 100;
+	z-index: 3;
 	cursor: pointer;
-	/* position: sticky; */
-	/* top: 2rem; */
-	/* right: 4rem; */
+	position: fixed;
+	right: min(10vw, 4rem);
 }
 
 .closed {
@@ -246,21 +256,28 @@ header {
 .opened {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
-	z-index: 99;
+	/* gap: 2rem; */
+	z-index: 2;
 	position: fixed;
 	top: 0;
 	right: 0;
 	width: 70vw;
 	height: 100vh;
-	/* padding-block: 7rem; */
+	padding-block: 7rem;
 	background: var(--clr-neutral-100);
+}
+
+.opened li a {
+	width: 85%;
+	padding: 1rem .5rem;
 }
 
 .nav--list a {
 	color: var(--clr-neutral-400);
 	display: flex;
-	width: 80%;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 }
 
 .nav--list a:is(:hover, :focus-visible) {
