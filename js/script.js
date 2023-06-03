@@ -7,19 +7,20 @@ const navListAnchorTags = document.querySelectorAll(".nav--list a");
 const navCloseBtn = document.querySelector(".nav--close--button");
 const overlay = document.querySelector(".overlay");
 
-//? Check if overlay is open
+//? Check if overlay display property is set to block
 let overlayIsOpen = window.getComputedStyle(overlay).display === "block";
 
-//? Function
+//? Functions
 const toggleOverlay = () => {
-	overlay.style.display = "none";
+	overlay.style.display = overlayIsOpen ? "none" : "block"; //* if true, change
+	overlayIsOpen = !overlayIsOpen; //* flips from true to false or vice-versa
 	navCloseBtn.classList.toggle("closed");
 	navList.classList.toggle("opened");
-	overlayIsOpen = false;
 };
-
 const closeOverlay = () => {
-	overlayIsOpen === true ? toggleOverlay() : null;
+	if (overlayIsOpen) {
+		toggleOverlay();
+	}
 };
 
 //? Close overlay when user clicks a navLink
@@ -27,31 +28,19 @@ for (const links of navListAnchorTags) {
 	links.addEventListener("click", closeOverlay);
 }
 
-//? Dynamically get Viewport Width & Height
+//? Dynamically get Viewport Width & Height, then close overlay if viewWidth reaches 700
 window.addEventListener(`resize`, () => {
 	const vw = Math.max(
 		document.documentElement.clientWidth || 0,
 		window.innerWidth || 0
 	);
-	const vh = Math.max(
-		document.documentElement.clientHeight || 0,
-		window.innerHeight || 0
-	);
-
-	//? Close overlay if viewWidth reaches 700
-	vw >= 700 ? closeOverlay() : null;
+	if (vw >= 700) {
+		closeOverlay();
+		return;
+	}
 });
 
-//? onclick Overlay
+//? onclick events
 overlay.addEventListener("click", toggleOverlay);
-
-//? onclick Menu Btn
-navMenuBtn.addEventListener("click", () => {
-	navList.classList.toggle("opened");
-	navCloseBtn.classList.toggle("closed");
-	overlay.style.display = "block";
-	overlayIsOpen = true;
-});
-
-//? onclick Close Btn
+navMenuBtn.addEventListener("click", toggleOverlay);
 navCloseBtn.addEventListener("click", toggleOverlay);
